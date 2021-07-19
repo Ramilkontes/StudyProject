@@ -1,3 +1,5 @@
+package ramil;
+
 public class Palindromes {
     private String word;
     private boolean flag = false;
