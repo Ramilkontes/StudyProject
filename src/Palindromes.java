@@ -1,25 +1,18 @@
 public class Palindromes {
-    private String word;
-    private boolean flag = false;
-    private char[] letters;
-
-    public Palindromes(String word) {
-        this.word = word;
-        this.letters = word.toCharArray();
-    }
-
-    public String definitionPolindromes()  {
-        int i1 = 0;
-        int i2 = letters.length - 1;
-        while (i2 > i1) {
-            if (letters[i1] != letters[i2]) {
-                flag = false;
-                return "This is false";
+    /**
+     * Определить принадлежность слова к словам палиндромам
+     *
+     * @param word слово
+     * @return результат принадлежности: {@code true}, если принадлежит
+     */
+    public static boolean isPalindrome(String word) {
+        char[] letters = word.toCharArray();
+        for (int i = 0; i < letters.length; i++) {
+            char letter = letters[i];
+            if (letter != letters[letters.length - 1 - i]) {
+                return false;
             }
-            ++i1;
-            --i2;
-            flag = true;
         }
-        return "This is true";
+        return true;
     }
 }
